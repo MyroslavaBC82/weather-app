@@ -12,6 +12,11 @@ h3 {
   font-size: 125px;
 }
 
+a {
+  display: block;
+  margin: 0 auto;
+}
+
 .degree {
   font-size: 100px;
 }
