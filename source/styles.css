@@ -12,9 +12,17 @@ h3 {
   font-size: 125px;
 }
 
-#ref {
-  display: block;
-  margin: 0 auto;
+.weather-app {
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.weather {
+  padding: 40px;
+  padding-right: 0;
+  padding-top: 10px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
 }
 
 .degree {
@@ -44,8 +52,8 @@ h3 {
 }
 
 .temperature {
-  color: rgb(33, 33, 33);
-  font-size: 120px;
+  color: rgb(49, 49, 49);
+  font-size: 80px;
   font-weight: 400;
   line-height: 1;
 }
@@ -53,5 +61,10 @@ h3 {
 .units {
   position: relative;
   top: -34px;
-  font-size: 45px;
+  font-size: 35px;
+}
+
+#town {
+  color: #4d4d4d;
+  font-size: 80px;
 }

@@ -36,7 +36,6 @@ function formatDate(date) {
   }
 
   let formattedDate = `${day}, ${month} ${todaydate}, ${hours}:${minutes}`;
-
   return formattedDate;
 }
 
@@ -46,7 +45,6 @@ specialDay.innerText = formatDate(new Date());
 function showTown(event) {
   event.preventDefault();
   let monday = document.querySelector("#town");
-  console.log(monday);
   monday.innerText = document.querySelector("input").value;
 }
 
@@ -76,11 +74,17 @@ function showWeather(response) {
   let hum = document.querySelector("#hum");
   let wind = document.querySelector("#wind");
   let temp = document.querySelector("#temperature");
+  let iconElement = document.querySelector("#icon");
   let temperature = Math.round(response.data.main.temp);
   town.innerHTML = response.data.name;
   temp.innerHTML = temperature;
   hum.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
+  icon = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
 }
 
 function retrieveInputPosition(position) {
