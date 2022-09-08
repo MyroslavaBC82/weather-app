@@ -1,0 +1,52 @@
+body {
+  margin: 50px;
+  font-family: "Libre Baskerville", serif;
+}
+
+h2 {
+  display: block;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 125px;
+}
+
+.degree {
+  font-size: 100px;
+}
+
+.search {
+  color: black;
+  border-color: darkgray;
+}
+
+.current-city {
+  font-size: 75px;
+}
+
+.card {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-icon {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 50px;
+}
+
+.temperature {
+  color: rgb(33, 33, 33);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  top: -34px;
+  font-size: 45px;
+}
