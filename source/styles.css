@@ -64,6 +64,17 @@ h3 {
   font-size: 35px;
 }
 
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: rgb(33, 33, 33);
+}
+
 #town {
   color: #4d4d4d;
   font-size: 80px;
