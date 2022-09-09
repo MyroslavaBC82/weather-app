@@ -53,14 +53,19 @@ button.addEventListener("click", showTown);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -71,11 +76,14 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 function showWeather(response) {
   let town = document.querySelector("#town");
+  let descriptionElement = document.querySelector("#description");
   let hum = document.querySelector("#hum");
   let wind = document.querySelector("#wind");
   let temp = document.querySelector("#temperature");
   let iconElement = document.querySelector("#icon");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = response.data.weather[0].description;
   town.innerHTML = response.data.name;
   temp.innerHTML = temperature;
   hum.innerHTML = response.data.main.humidity;
@@ -115,6 +123,8 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+
+let celsiusTemperature = null;
 
 document
   .querySelector("#current_submit")
